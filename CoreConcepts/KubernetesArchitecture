@@ -65,7 +65,8 @@
 | to list all the nodes part of the cluster| ```kubectl get nodes```                 |
 | to list all the pods  part of the cluster| ```kubectl get pods```                  |
 | to create pods by using an yaml file     | ```kubectl create -f pod-defination.yml```           |
-| to see the details of a pod              | ```kubectl describe pod myapp-pod```           |
+| to see the details of a pod              | ```kubectl describe pod myapp-pod```    |
+| to delete a pod                          | ```kubectl delete pods webapp```           |
 
 ## Pods 
 - Kubernetes does not deploy containers directly to worker nodes 
@@ -87,3 +88,26 @@ metadata:       # Data about the object. [It's an Array of name and labels [Labe
 
 spec:           # Depends on the object we create. Its an Array. [Containers -Arrays and name and image in it]
 ```
+- Following is the sample Pod defination language
+
+```yaml
+apiVersion : v1
+kind : Pod
+metadata :
+  name : myapp-pod
+  labels:
+    app: myapp
+spec:
+  containers:
+    - name: nginx-container 
+      image: nginx 
+``` 
+
+- Commands :-
+```shell script
+kubectl get pods                        # No resource found
+kubectl create -f pod-defination.yml    # Pod "myapp-pod" created
+kubectl get pods                        # Container creating  
+kubectl get pods                        # running 
+```
+
