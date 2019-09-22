@@ -1,0 +1,89 @@
+## Node 
+- A Machine, Physical or virtual on which kubenetes is installed 
+- A worker machin on which containers will be launched by kubenetes 
+- Also known as minions 
+
+## Clusters
+- A set of nodes grouped together 
+- Purpose 
+    - If one node goes down, Other nodes are available
+    - Load sharing  
+
+## Master 
+- Another node with kubernetes installed in it
+- Responsible for managing a cluster 
+- Info about the cluster members stored 
+- Monitoring cluster 
+- When node fails, moves the load of a failed node to another node 
+
+## Componenets 
+- When you install kubernetes on a node, You are actually installing the following components. 
+    - API Server
+        - Front end for Kubenetes
+    - etcd
+        - Distributed key value store (Data used to manage cluster)
+        - When you have multiple nodes and multiple masters in cluster, etcd stores all the info on all the nodes
+        - etcd is responsible for implementing the locks within the cluster to ensure no conflicts in the master 
+    - kubelet
+        - Agent that runs on each node
+        - Responsible for making sure that containers are runing on node as expected 
+    - Container Runtime 
+        - Underlying software to run conatiners (Ex docker) 
+    - Controller
+        - Brain behind orchastration 
+        - Responsible for noticing or responding when nodes, containers or endpoints goes down
+        - Makes decision to brings up new containes in above cases 
+    - Scheduler 
+        - Distributing work or containers across multiple nodes 
+        - looks for newly created containers and assigns them to nodes 
+    - API Server  
+    
+## Masters vs Worker Nodes
+- Two types of servers 
+    - Masters 
+    - Worker
+- How the components are distributed accross servers ? Means how does one becomes master and other becomes worker ?
+    - Worker/Minions 
+        - Containers are hosted. That means container runtimes are needed
+        - Kuberlet agent to interact with master via API Server 
+    - Mater -     
+        - Kube API server is hosted 
+        - etcd 
+        - Controller
+        - Scheduler 
+    
+## kubectl 
+- Command line tool
+- used to deploy and manage apps on kubenetes cluster
+- Following command is used 
+- Commands
+
+| Command Info                             | Command                                 | 
+|:----------------------------------------:|:---------------------------------------:|
+| to deploy app on cluster                 | ```kubectl run hello-minikube```        |
+| to view info about the cluster           | ```kubectl cluster-info```              |            
+| to list all the nodes part of the cluster| ```kubectl get nodes```                 |
+| to list all the pods  part of the cluster| ```kubectl get pods```                  |
+| to create pods by using an yaml file     | ```kubectl create -f pod-defination.yml```           |
+| to see the details of a pod              | ```kubectl describe pod myapp-pod```           |
+
+## Pods 
+- Kubernetes does not deploy containers directly to worker nodes 
+- Containers are encapsulated into PODs 
+- Pod is a single instance of an application.
+- Smalled object in kubenetes 
+- 1 Container ...1-to-1... 1 POD (Usual.  Do not add additional container to scale up your app)  
+- 1 Main container + 1 helper container ...1-to-1... 1 Pod 
+- 1 node can contain many pods 
+- kubectl run nginx --image nginx.  Actually deploys docker container in pod. 
+
+
+## Pods with YAML 
+- Kubernetes defination file (yml) always contains 4 top level/root level required fields 
+```yaml
+apiVersion:     # Kubenetes api to create an object
+kind:           # Type of object trying to create. Ex : Pod
+metadata:       # Data about the object. [It's an Array of name and labels [Label - array]]
+
+spec:           # Depends on the object we create. Its an Array. [Containers -Arrays and name and image in it]
+```
