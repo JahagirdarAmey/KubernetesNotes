@@ -1,5 +1,4 @@
-
-Pods - https://kodekloud.com/p/practice-test-kubernetes-ckad-pods
+[Pods](https://kodekloud.com/p/practice-test-kubernetes-ckad-pods)
 
 <details><summary>How many PODs exist on the system?</summary>
 k get pods</details>
@@ -37,7 +36,7 @@ k run redis --image=redis123 --generator=run-pod/v1 //TODO</details>
 <details><summary>Now fix the image on the pod to 'redis'.</summary>
 k edit po redis</details>
 
-ReplicaSets https://kodekloud.com/p/practice-test-kubernetes-ckad-replicasets
+[ReplicaSets](https://kodekloud.com/p/practice-test-kubernetes-ckad-replicasets)
 
 <details><summary>How many ReplicaSets exist on the system?</summary>
 k get rs</details>
@@ -58,7 +57,7 @@ k delete po new-replica-set-kfgml</details>
 k get po </details>
     
 <details><summary>Why are there still 4 PODs, even after you deleted one?</summary>     
-    New pod created automatically when deleted one. RS ensures desired number of pods</details> 
+New pod created automatically when deleted one. RS ensures desired number of pods</details> 
     
 <details><summary>Create a ReplicaSet using the 'replicaset-definition-1.yaml' file located at /root/</summary>
 kubectl create -f FILENAME </details>
@@ -79,7 +78,7 @@ k edit rs new-replica-set</summary>
 <details><summary>Now scale the ReplicaSet down to 2 PODs</summary>
 k edit rs new-replica-set //TODO </details>
     
-Deployements https://kodekloud.com/p/practice-test-kubernetes-ckad-deployments
+[Deployements](https://kodekloud.com/p/practice-test-kubernetes-ckad-deployments)    
 
 <details><summary>How many Deployments exist on the system?</summary>   
 k get deploy </details>
@@ -92,7 +91,7 @@ k get deploy </details>
 k get deploy -o=wide</details>
     
 <details><summary>Why do you think the deployment is not ready?</summary>
-    Image does not exist</details>
+Image does not exist</details>
     
 <details><summary>Create a new Deployment using the 'deployment-definition-1.yaml' file located at /root/</summary>
 kind, api version, labels, image  </details>
@@ -100,8 +99,6 @@ kind, api version, labels, image  </details>
 <details><summary>Create a new Deployment with the below attributes using your own deployment definition file Name: httpd-frontend, Replicas: 3, Image: httpd:2.4-alpine</summary>    
 kubectl run --generator=deployment/v1beta1 httpd-frontend --replicas=3 --image=httpd:2.4-alpine</details>
      
-
-
 <details><summary>Create an NGINX Pod </summary>
 kubectl run --generator=run-pod/v1 nginx --image=nginx</details>
 
@@ -132,7 +129,7 @@ kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --repli
 kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml</details>
       
   
-Commands - https://kodekloud.com/p/practice-test-kubernetes-cka-imperative-1
+[Commands](https://kodekloud.com/p/practice-test-kubernetes-cka-imperative-1)   
 
 <details><summary>Deploy a pod named nginx-pod using the nginx:alpine image.</summary>
 k run  --generator=run-pod/v1 nginx-pod --image=nginx:alpine</details>
@@ -146,7 +143,7 @@ k expose pod redis --port=6379 --name redis-service</details>
 <details><summary>Create a deployment named webapp using the image kodekloud/webapp-color with 3 replicas</summary>
 k run --generator=deployment/v1beta1 webapp --image=kodekloud/webapp-color --replicas=3  </details>
     
-<details><summary>Expose the webapp as service webapp-service application on port 30082 on the nodes on the cluster. The web application listens on port 8080    </summary>
+<details><summary>Expose the webapp as service webapp-service application on port 30082 on the nodes on the cluster. The web application listens on port 8080</summary>
 kubectl expose deployment webapp --type=NodePort --port=8080 --name=webapp-service --dry-run -o yaml > webapp-service.yaml</details>
     
 
