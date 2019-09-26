@@ -34,7 +34,10 @@
 ```k run redis --image=redis123 --generator=run-pod/v1``` //TODO</details>
 
 <details><summary>Now fix the image on the pod to 'redis'.</summary>
-```k edit po redis```</details>
+```yaml
+k edit po redis
+```
+</details>
 
 [ReplicaSets](https://kodekloud.com/p/practice-test-kubernetes-ckad-replicasets)
 
