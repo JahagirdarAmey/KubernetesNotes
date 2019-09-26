@@ -1,40 +1,40 @@
 [Pods](https://kodekloud.com/p/practice-test-kubernetes-ckad-pods)
 
 <details><summary>How many PODs exist on the system?</summary>
-k get pods</details>
+```k get pods```</details>
 
 <details><summary>Create a new pod with the NGINX image</summary>
-k run pod --image=nginx</details>   
+```k run pod --image=nginx```</details>   
 
 <details><summary>How many pods are created now?</summary>
-k get po</details>
+```k get pods```</details>
 
 <details><summary>Which image is used to create a new pods</summary>
-k describe po newpods-lf26b</details>
+```k describe pods newpods-lf26b```</details>
 
 <details><summary>Which nodes are these pods placed on?</summary>
-k get po -o=wide</details>
+```k get pods -o=wide```</details>
 
 <details><summary>How many containers are part of the pod 'webapp'?</summary>
-k describe po webapp</details>
+```k describe pods webapp```</details>
 
 <details><summary>What images are used in the new 'webapp' pod?</summary>
-k describe po webapp</details>
+```k describe po webapp```</details>
 
 <details><summary>What is the state of the container 'agentx' in the pod 'webapp'?</summary>
-k describe po webapp</details>
+```k describe po webapp```</details>
 
 <details><summary>Why do you think the container 'agentx' in pod 'webapp' is in error?</summary>
-k describe po webapp</details>
+```k describe po webapp```</details>
 
 <details><summary>Delete the 'webapp' Pod.</summary>
-k delete po webapp</details>
+```k delete po webapp```</details>
 
 <details><summary>Create a new pod with the name 'redis' and with the image 'redis123'</summary>
-k run redis --image=redis123 --generator=run-pod/v1 //TODO</details>
+```k run redis --image=redis123 --generator=run-pod/v1``` //TODO</details>
 
 <details><summary>Now fix the image on the pod to 'redis'.</summary>
-k edit po redis</details>
+```k edit po redis```</details>
 
 [ReplicaSets](https://kodekloud.com/p/practice-test-kubernetes-ckad-replicasets)
 
