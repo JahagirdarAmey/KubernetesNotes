@@ -186,15 +186,30 @@ k edit rs new-replica-set //TODO </details>
     
 [Deployements](https://kodekloud.com/p/practice-test-kubernetes-ckad-deployments)    
 
-<details><summary>How many Deployments exist on the system?</summary>   
-k get deploy </details>
+<details><summary>How many Deployments exist on the system?</summary>
+
+```yaml
+k get deploy 
+```   
+
+</details>
     
 <details><summary>Out of all the existing PODs, how many are ready?</summary>
-    - k get po
-    - Ready Column - 0/1</details>
+
+```yaml
+k get po
+Ready Column - 0/1
+```   
+
+</details>
     
 <details><summary>What is the image used to create the pods in the new deployment?</summary>
-k get deploy -o=wide</details>
+
+```yaml
+k get deploy -o=wide
+```   
+
+</details>
     
 <details><summary>Why do you think the deployment is not ready?</summary>
 Image does not exist</details>
@@ -203,36 +218,81 @@ Image does not exist</details>
 kind, api version, labels, image  </details>
 
 <details><summary>Create a new Deployment with the below attributes using your own deployment definition file Name: httpd-frontend, Replicas: 3, Image: httpd:2.4-alpine</summary>    
-kubectl run --generator=deployment/v1beta1 httpd-frontend --replicas=3 --image=httpd:2.4-alpine</details>
+
+```yaml
+kubectl run --generator=deployment/v1beta1 httpd-frontend --replicas=3 --image=httpd:2.4-alpine
+```   
+
+</details>
      
 <details><summary>Create an NGINX Pod </summary>
-kubectl run --generator=run-pod/v1 nginx --image=nginx</details>
+
+```yaml
+kubectl run --generator=run-pod/v1 nginx --image=nginx
+```   
+
+</details>
 
 <details><summary>Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)</summary>
-kubectl run --generator=run-pod/v1 nginx --image=nginx --dry-run -o yaml</details>
+
+```yaml
+kubectl run --generator=run-pod/v1 nginx --image=nginx --dry-run -o yaml
+```   
+
+</details>
 
 <details><summary>Create a deployment</summary>
-kubectl run --generator=deployment/v1beta1 nginx --image=nginx</details>
+
+```yaml
+kubectl run --generator=deployment/v1beta1 nginx --image=nginx
+```   
+
+</details>
 
 <details><summary>Or the newer recommended way:</summary>
-kubectl create deployment --image=nginx nginx</details>
+
+```yaml
+kubectl create deployment --image=nginx nginx
+```   
+
+</details>
 
 <details><summary>Generate Deployment YAML file (-o yaml). Don't create it(--dry-run)</summary>
+
+```yaml
 kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run -o yaml
     Or
-kubectl create deployment --image=nginx nginx --dry-run -o yaml</details>
+kubectl create deployment --image=nginx nginx --dry-run -o yaml
+```   
+
+</details>
 
 <details><summary>Generate Deployment YAML file (-o yaml). Don't create it(--dry-run) with 4 Replicas (--replicas=4)</summary>
-kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml</details>
+
+```yaml
+kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml
+```   
+
+</details>
 
 <details><summary>kubectl create deployment does not have a --replicas option. You could first create it and then scale it using the kubectl scale command.</summary></details>
 
 <details><summary>Save it to a file - (If you need to modify or add some other details)</summary>
-kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml > nginx-deployment.yaml</details>
+
+```yaml
+kubectl run --generator=deployment/v1beta1 nginx --image=nginx --dry-run --replicas=4 -o yaml > nginx-deployment.yaml
+```   
+
+</details>
 
 
 <details><summary>Create a Service named nginx of type NodePort and expose it on port 30080 on the nodes:</summary>
-kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml</details>
+
+```yaml
+kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o yaml
+```   
+
+</details>
       
   
 [Commands](https://kodekloud.com/p/practice-test-kubernetes-cka-imperative-1)   
