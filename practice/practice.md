@@ -1,37 +1,92 @@
 [Pods](https://kodekloud.com/p/practice-test-kubernetes-ckad-pods)
 
 <details><summary>How many PODs exist on the system?</summary>
-```k get pods```</details>
+
+```yaml
+k get pods
+```
+
+</details>
 
 <details><summary>Create a new pod with the NGINX image</summary>
-```k run pod --image=nginx```</details>   
+
+```yaml
+k run pod --image=nginx
+```
+
+</details>   
 
 <details><summary>How many pods are created now?</summary>
-```k get pods```</details>
+
+```yaml
+k get pods
+```
+
+</details>
 
 <details><summary>Which image is used to create a new pods</summary>
-```k describe pods newpods-lf26b```</details>
+
+```yaml
+k describe pods newpods-lf26b
+```
+
+</details>
 
 <details><summary>Which nodes are these pods placed on?</summary>
-```k get pods -o=wide```</details>
+
+```yaml
+k get pods -o=wide
+```
+
+</details>
 
 <details><summary>How many containers are part of the pod 'webapp'?</summary>
-```k describe pods webapp```</details>
+
+```yaml
+k describe pods webapp
+```
+
+</details>
 
 <details><summary>What images are used in the new 'webapp' pod?</summary>
-```k describe po webapp```</details>
+
+```yaml
+k describe po webapp
+```
+
+</details>
 
 <details><summary>What is the state of the container 'agentx' in the pod 'webapp'?</summary>
-```k describe po webapp```</details>
+
+```yaml
+k describe po webapp
+```
+
+</details>
 
 <details><summary>Why do you think the container 'agentx' in pod 'webapp' is in error?</summary>
-```k describe po webapp```</details>
+
+```yaml
+k describe po webapp
+```
+
+</details>
 
 <details><summary>Delete the 'webapp' Pod.</summary>
-```k delete po webapp```</details>
+
+```yaml
+k delete po webapp
+```
+
+</details>
 
 <details><summary>Create a new pod with the name 'redis' and with the image 'redis123'</summary>
-```k run redis --image=redis123 --generator=run-pod/v1``` //TODO</details>
+
+```yaml
+k run redis --image=redis123 --generator=run-pod/v1
+``` //TODO
+
+</details>
 
 <details><summary>Now fix the image on the pod to 'redis'.</summary>
 
