@@ -99,41 +99,87 @@ k edit po redis
 [ReplicaSets](https://kodekloud.com/p/practice-test-kubernetes-ckad-replicasets)
 
 <details><summary>How many ReplicaSets exist on the system?</summary>
-k get rs</details>
+
+```yaml
+k get rs
+```
+
+</details>
     
 <details><summary>How many PODs are DESIRED in the new-replica-set?</summary>
-k get rs -> Look at desired </details>
+
+```yaml
+k get rs
+```
+Look at desired 
+</details>
     
 <details><summary>What is the image used to create the pods in the new-replica-set?</summary>
-k describe rs</details>
+
+```yaml
+k describe rs
+```
+</details>
     
 <details><summary>How many PODs are READY in the new-replica-set?</summary>
-k get rs -> Look at ready column</details> 
+
+```yaml
+k get rs
+```
+ 
+Look at ready column</details> 
    
 <details><summary>Delete any one of the 4 PODs</summary>
-k delete po new-replica-set-kfgml</details>
+
+```yaml
+k delete po new-replica-set-kfgml
+```
+</details>
     
 <details><summary>How many PODs exist now?</summary>
-k get po </details>
+
+```yaml
+k get po
+```
+
+</details>
     
 <details><summary>Why are there still 4 PODs, even after you deleted one?</summary>     
 New pod created automatically when deleted one. RS ensures desired number of pods</details> 
     
 <details><summary>Create a ReplicaSet using the 'replicaset-definition-1.yaml' file located at /root/</summary>
-kubectl create -f FILENAME </details>
+
+```yaml
+kubectl create -f FILENAME 
+```
+
+</details>
     
 <details><summary>Fix the issue in the replicaset-definition-2.yaml file and create a ReplicaSet using it.</summary>
 Lables should match, API Version </details>
     
 <details><summary>Delete the two newly created ReplicaSets - replicaset-1 and replicaset-2
+
+```yaml
 k delete rs name
+```
     
 <details><summary>Fix the original replica set 'new-replica-set' to use the correct 'busybox' image **IMP**</summary>
-     - k edit rs new-replica-set.
-     - delete all pods </details>
+     
+```yaml
+k edit rs new-replica-set.
+```
+   
+Delete all pods 
+</details>
  
 <details><summary>Scale the ReplicaSet to 5 PODs
-k edit rs new-replica-set</summary>
+
+```yaml
+k edit rs new-replica-set
+```
+
+</summary>
     
 <details><summary>Now scale the ReplicaSet down to 2 PODs</summary>
 k edit rs new-replica-set //TODO </details>
