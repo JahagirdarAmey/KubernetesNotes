@@ -158,11 +158,13 @@ kubectl create -f FILENAME
 <details><summary>Fix the issue in the replicaset-definition-2.yaml file and create a ReplicaSet using it.</summary>
 Lables should match, API Version </details>
     
-<details><summary>Delete the two newly created ReplicaSets - replicaset-1 and replicaset-2
+<details><summary>Delete the two newly created ReplicaSets - replicaset-1 and replicaset-2</summary>
 
 ```yaml
 k delete rs name
 ```
+
+</details>
     
 <details><summary>Fix the original replica set 'new-replica-set' to use the correct 'busybox' image **IMP**</summary>
      
@@ -173,13 +175,13 @@ k edit rs new-replica-set.
 Delete all pods 
 </details>
  
-<details><summary>Scale the ReplicaSet to 5 PODs
+<details><summary>Scale the ReplicaSet to 5 PODs</summary>
 
 ```yaml
 k edit rs new-replica-set
 ```
 
-</summary>
+</details>
     
 <details><summary>Now scale the ReplicaSet down to 2 PODs</summary>
 k edit rs new-replica-set //TODO </details>
