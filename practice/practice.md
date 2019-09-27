@@ -300,19 +300,44 @@ kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run -o
 [Commands](https://kodekloud.com/p/practice-test-kubernetes-cka-imperative-1)   
 
 <details><summary>Deploy a pod named nginx-pod using the nginx:alpine image.</summary>
-k run  --generator=run-pod/v1 nginx-pod --image=nginx:alpine</details>
+
+```yaml
+k run  --generator=run-pod/v1 nginx-pod --image=nginx:alpine
+```
+
+</details>
    
 <details><summary>Deploy a redis pod using the redis:alpine image with the labels set to tier=db</summary>   
-k run  --generator=run-pod/v1 redis --labels=tier=db --image=redis:alpine</details>
+
+```yaml
+k run  --generator=run-pod/v1 redis --labels=tier=db --image=redis:alpine
+```
+
+</details>
 
 <details><summary>Create a service redis-service to expose the redis application within the cluster on port 6379.</summary>
-k expose pod redis --port=6379 --name redis-service</details>
+
+```yaml
+k expose pod redis --port=6379 --name redis-service
+```
+
+</details>
   
 <details><summary>Create a deployment named webapp using the image kodekloud/webapp-color with 3 replicas</summary>
-k run --generator=deployment/v1beta1 webapp --image=kodekloud/webapp-color --replicas=3  </details>
+
+```yaml
+k run --generator=deployment/v1beta1 webapp --image=kodekloud/webapp-color --replicas=3  
+```
+
+</details>
     
 <details><summary>Expose the webapp as service webapp-service application on port 30082 on the nodes on the cluster. The web application listens on port 8080</summary>
-kubectl expose deployment webapp --type=NodePort --port=8080 --name=webapp-service --dry-run -o yaml > webapp-service.yaml</details>
+
+```yaml
+kubectl expose deployment webapp --type=NodePort --port=8080 --name=webapp-service --dry-run -o yaml > webapp-service.yaml
+```
+
+</details>
     
 
 
