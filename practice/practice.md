@@ -339,6 +339,74 @@ kubectl expose deployment webapp --type=NodePort --port=8080 --name=webapp-servi
 
 </details>
     
+[Namespaces](https://kodekloud.com/p/practice-test-kubernetes-ckad-namespaces)
+
+<details><summary>How many Namespaces exist on the system?</summary>
+
+```yaml
+kubectl get namespace
+```
+
+</details>
+
+
+<details><summary>How many pods exist in the 'research' namespace?</summary>
+
+```yaml
+kubectl get namespace
+```
+
+</details>
+
+<details><summary>Create a POD in the 'finance' namespace.?</summary>
+
+```yaml
+k run redis --image=redis --namespace=finance --generator=run-pod/v1
+```
+
+</details>
+
+
+<details><summary>Which namespace has the 'blue' pod in it?</summary>
+
+```yaml
+kubectl get pods --all-namespaces
+```
+
+</details>
+
+<details><summary>Access the Blue web application using the link above your terminal</summary>
+
+```yaml
+TODO
+```
+
+</details>
+
+<details><summary>Access the Blue web application using the link above your terminal</summary>
+
+```yaml
+TODO
+```
+
+</details>
+
+<details><summary>What DNS name should the Blue application use to access the database 'db-service' in its own namespace - 'marketing'.</summary>
+
+```yaml
+TODO
+```
+
+</details>
+
+<details><summary>What DNS name should the Blue application use to access the database 'db-service' in the 'dev' namespace</summary>
+
+```yaml
+TODO
+```
+
+</details>
+
 
 
 
