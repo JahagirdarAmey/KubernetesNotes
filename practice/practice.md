@@ -2,7 +2,7 @@
 
 ## Pods 
 
-<details>How many PODs exist on the system? in the current(default) namespace<summary></summary>
+<details><summary>How many PODs exist on the system? in the current(default) namespace</summary>
 
 ```yaml
 kubectl get pods
@@ -10,7 +10,7 @@ kubectl get pods
 
 </details>
 
-<details>Create a new pod with the NGINX image<summary></summary>
+<details><summary>Create a new pod with the NGINX image</summary>
 
 ```yaml
 kubectl run nginx --image=nginx
@@ -18,7 +18,7 @@ kubectl run nginx --image=nginx
 
 </details>
 
-<details>What is the image used to create the new pods?<summary></summary>
+<details><summary>What is the image used to create the new pods?</summary>
 
 ```yaml
 kubectl describe pods
@@ -26,7 +26,7 @@ kubectl describe pods
 
 </details>
 
-<details>Which nodes are these pods placed on?<summary></summary>
+<details><summary>Which nodes are these pods placed on?</summary>
 
 ```yaml
 kubectl describe pods
@@ -34,7 +34,7 @@ kubectl describe pods
 
 </details>
 
-<details>How many containers are part of the pod 'webapp'?Note: We just created a new POD. Ignore the state of the POD for now.<summary></summary>
+<details><summary>How many containers are part of the pod 'webapp'?Note: We just created a new POD. Ignore the state of the POD for now.</summary>
 
 ```yaml
 kubectl describe pod webapp
@@ -43,7 +43,7 @@ kubectl describe pod webapp
 </details>
 
 
-<details>What images are used in the new 'webapp' pod? You must look at all the pods in detail to figure this out<summary></summary>
+<details><summary>What images are used in the new 'webapp' pod? You must look at all the pods in detail to figure this out</summary>
 
 ```yaml
 kubectl describe pod webapp
@@ -51,7 +51,7 @@ kubectl describe pod webapp
 
 </details>
 
-<details>What is the state of the container 'agentx' in the pod 'webapp'? Wait for it to finish the 'ContainerCreating' state<summary></summary>
+<details><summary>What is the state of the container 'agentx' in the pod 'webapp'? Wait for it to finish the 'ContainerCreating' state</summary>
 
 ```yaml
 kubectl describe pod webapp
@@ -59,7 +59,7 @@ kubectl describe pod webapp
 
 </details>
 
-<details>Why do you think the container 'agentx' in pod 'webapp' is in error? Try to figure it out from the events section of the pod<summary></summary>
+<details><summary>Why do you think the container 'agentx' in pod 'webapp' is in error? Try to figure it out from the events section of the pod</summary>
 
 ```yaml
 Image does not exist on docker
@@ -67,7 +67,7 @@ Image does not exist on docker
 
 </details>
 
-<details>What does the READY column in the output of the 'kubectl get pods' command indicate?<summary></summary>
+<details><summary>What does the READY column in the output of the 'kubectl get pods' command indicate?</summary>
 
 ```yaml
 Running containers in a pod / Total containers in a pod
@@ -75,7 +75,7 @@ Running containers in a pod / Total containers in a pod
 
 </details>
 
-<details>Delete the 'webapp' Pod. Once deleted, wait for the pod to fully terminate.<summary></summary>
+<details><summary>Delete the 'webapp' Pod. Once deleted, wait for the pod to fully terminate.</summary>
 
 ```yaml
 kubectl delete pod webapp
@@ -83,7 +83,7 @@ kubectl delete pod webapp
 
 </details>
 
-<details>Create a new pod with the name 'redis' and with the image 'redis123'.<summary></summary>
+<details><summary>Create a new pod with the name 'redis' and with the image 'redis123'.</summary>
 
 ```yaml
 kubectl run redis --image=redis123 --generator=run-pod/v1 
@@ -91,7 +91,7 @@ kubectl run redis --image=redis123 --generator=run-pod/v1
 
 </details>
 
-<details>Create a new pod with the name 'redis' and with the image 'redis123'.<summary></summary>
+<details><summary>Create a new pod with the name 'redis' and with the image 'redis123'.</summary>
 
 ```yaml
 kubectl edit pod redis
